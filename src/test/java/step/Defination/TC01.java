@@ -3,10 +3,10 @@ package step.Defination;
 import org.junit.Assert;
 
 import io.cucumber.java.en.*;
-import pages.page_01_loginPage;
+import pages.Page_01_loginPage;
 import utilities.TestBase;
 
-public class StepDefination extends TestBase {
+public class TC01 extends TestBase {
 
 	@Given("user launched the brower and entered url.")
 	public void user_launched_the_brower_and_entered_url() {
@@ -17,14 +17,14 @@ public class StepDefination extends TestBase {
 	@When("agent enterd userid As {string} password as this {string}.")
 	public void agent_enterd_userid_as_password_as_this(String username, String password) {
 
-		objLoginPage = new page_01_loginPage(driver);
+		objLoginPage = new Page_01_loginPage(driver);
 		objLoginPage.enterUserIdAndPassword(username, password);
 
 	}
 
 	@When("agent click on login button.")
 	public void agent_click_on_login_button() {
-		objLoginPage = new page_01_loginPage(driver);
+		objLoginPage = new Page_01_loginPage(driver);
 		objLoginPage.clickOnLoginBtn();
 
 	}

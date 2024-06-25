@@ -11,14 +11,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pages.page_01_loginPage;
+import pages.Page_01_loginPage;
 
 public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties proparty;
 	public static String getPropartyValue;
-	public page_01_loginPage objLoginPage;
+	public Page_01_loginPage objLoginPage;
 	public static FileInputStream filePath;
 	public static String rootPath = System.getProperty("user.dir");
 
@@ -61,6 +61,7 @@ public class TestBase {
 		driver.manage().window().maximize();
 		System.out.println(" ********** Browser Launched Sucessfully **********  ");
 		driver.get(proparty.getProperty("url"));
+		driver.navigate().refresh();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 	}

@@ -1,16 +1,12 @@
-Feature: ABHI Seller portal policy sale.
+Feature: ABHI Purches Policy.
 
-	@Login
-  Scenario Outline: Verify Agent login functionality.
+  Scenario: ABHI Purchas product.
     Given user launched the brower and entered url.
     When agent enterd userid As "<username>" password as this "<password>".
     And agent click on login button.
     Then verify agent landed on dashboard.
-    
-    Examples:
-			| username| password  |
-    	| 5100003  | Test@1234 |
-    	| 5200003  | Test@1236 |
+    And click on plus button and get quote.
+    And select standalone product type.
     
     
-    
+
