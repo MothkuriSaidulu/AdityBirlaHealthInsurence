@@ -7,11 +7,11 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {
-//		"C:\\Users\\SAIDACHARY\\eclipse-workspace\\AdityBirlaHealthInsurence\\featureFiles\\TC01_Verify_Agent_Login_Function.feature", 
-		"C:\\Users\\SAIDACHARY\\eclipse-workspace\\AdityBirlaHealthInsurence\\featureFiles\\TC02_Purchas_Product.feature" }, glue = {
-				"step.Defination" }, dryRun = true, monochrome = true
-
+//		"C:\Users\Monocept\eclipse-workspace\AdityaBirlaHealthInsurence\featureFiles\TC01_Verify_Agent_Login_Function.feature", 
+		"C:\\Users\\Monocept\\eclipse-workspace\\AdityaBirlaHealthInsurence\\featureFiles\\TC02_Purchas_Product.feature" }, glue = {
+				"step.Defination" }, dryRun = false, monochrome = true
 )
+
 public class TestRunner {
 
 }

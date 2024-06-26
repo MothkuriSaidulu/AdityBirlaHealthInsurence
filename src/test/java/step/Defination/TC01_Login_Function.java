@@ -6,7 +6,7 @@ import io.cucumber.java.en.*;
 import pages.Page_01_loginPage;
 import utilities.TestBase;
 
-public class TC01 extends TestBase {
+public class TC01_Login_Function extends TestBase {
 
 	@Given("user launched the brower and entered url.")
 	public void user_launched_the_brower_and_entered_url() {

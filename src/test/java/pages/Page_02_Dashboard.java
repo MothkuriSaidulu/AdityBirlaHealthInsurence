@@ -1,5 +1,6 @@
 package pages;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -35,19 +36,26 @@ public class Page_02_Dashboard extends onlineActions {
 
 	//
 
-	public void clickOnButton() {
+	public void clickOnPlusButton() throws IOException {
 		Click(plusButton, "Click On Plus button");
 		Click(getQuote, "Get quote");
+
+	}
+
+	public void selectStandAloneProduct() throws IOException {
 		Click(BuyStandaloneProduct, "Standalon Product");
+		
+		proparty = readPropartyFile();
+		String configProductName = proparty.getProperty("productType");
 
 		for (int i = 0; i < listOfProductTypes.size(); i++) {
 			String productName = listOfProductTypes.get(i).getText();
-			if (productName.equalsIgnoreCase("Activ Health")) {
+			System.out.println(productName);
+			if (productName.equalsIgnoreCase(configProductName)) {
 				listOfProductTypes.get(i).click();
-
+				break;
 			}
-
 		}
-	}
 
+	}
 }
