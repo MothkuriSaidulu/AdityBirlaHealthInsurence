@@ -10,9 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import actions.onlineActions;
 import utilities.TestBase;
 
-public class page_01_loginPage extends onlineActions {
+public class Page_01_loginPage extends onlineActions {
 
-	public page_01_loginPage(WebDriver driver) {
+	public Page_01_loginPage(WebDriver driver) {
 		super(driver);
 		TestBase.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -46,17 +46,19 @@ public class page_01_loginPage extends onlineActions {
 	}
 
 	public void clickOnLoginBtn() {
-		
+
 		Click(login_btn, "login button");
-		
+
 //		String dashBoardTitle = "Aditya Birla Health Insurance";
 //		String  = driver.getTitle();
-		
+
 		try {
+
 //			boolean flag = false;
 //			waitForElementToInvisable(overlay, "Overlay");
 			Thread.sleep(10000);
 //			WaitForWebElementToVisable(incorrentCredentials, getPropartyValue);
+
 			if (incorrentCredentials.isDisplayed()) {
 				System.err.println(incorrentCredentials.getText());
 			} else {
@@ -70,4 +72,17 @@ public class page_01_loginPage extends onlineActions {
 
 	}
 
+	public void invalidLoginDetails() {
+
+		try {
+			if (incorrentCredentials.isDisplayed()) {
+				System.out.println(incorrentCredentials.getText());
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 }

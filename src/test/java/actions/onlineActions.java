@@ -1,7 +1,11 @@
 package actions;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -13,6 +17,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilities.TestBase;
@@ -119,9 +124,8 @@ public class onlineActions extends TestBase {
 
 		} catch (Exception e) {
 			logger.error("ERROR WHILE TRYING TO VERIFY THE TEXT FOR SPECIFIED WEB ELEMENT : " + e.getMessage());
-			Assert.fail("Exception : WHILE TRYING TO VERIFY THE TEXT INSIDE A WEB ELEMENT : "
-					+ "Actual and expected texts are not matching for: " + "<b>" + elementDesc + "</b>"
-					+ " due to the Exception: " + e.getMessage());
+			Assert.fail("Exception : WHILE TRYING TO SEND THE TEXT INSIDE A WEB ELEMENT : " + "<b>" + elementDesc
+					+ "</b>" + " due to the Exception: " + e.getMessage());
 		}
 
 	}
@@ -163,6 +167,28 @@ public class onlineActions extends TestBase {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+	}
+
+	public Properties readPropartyFile() throws IOException {
+
+		try {
+			proparty = new Properties();
+			filePath = new FileInputStream("config.properties");
+			proparty.load(filePath);
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return proparty;
+	}
+
+	public Select selectOptonsFromDropDown(WebElement element) {
+		objSelect = new Select(element);
+		return objSelect;
 
 	}
 

@@ -10,7 +10,7 @@ Feature: ABHI Seller portal policy sale.
     Examples:
 			| username| password  |
     	| 5100003  | Test@1234 |
-    	| 5200003  | Test@123  |
+    	| 5200003  | Test@1236 |
     
     
     
