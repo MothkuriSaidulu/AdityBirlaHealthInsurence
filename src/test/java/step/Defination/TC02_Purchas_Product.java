@@ -44,13 +44,23 @@ public class TC02_Purchas_Product extends TestBase {
 	}
 
 	@Then("enter proposer details.")
-	public void enter_proposer_details() {
+	public void enter_proposer_details() throws IOException {
 		objInsuredMember = new Page_03_Insured_Members(driver);
-		objInsuredMember.selectDateOfBirth();
+		objInsuredMember.enterDateOfBirth();
+//		objInsuredMember.enterMonth();
+//		objInsuredMember.enterYear();
 		objInsuredMember.selectgenderType();
 		objInsuredMember.selectpolicyType();
 		objInsuredMember.selectSelectSumInsuredForFamily();
 		objInsuredMember.enterPinCode();
+	}
+
+	@Then("enter proposer details Select Policy Type as {string} and Select Sum Insured for Family as {string} and pincode as {string}.")
+	public void enter_proposer_details_select_policy_type_as_and_select_sum_insured_for_family_as_and_pincode_as(
+			String policyType, String sumInsureAmount, String pinCode) throws IOException {
+		objInsuredMember = new Page_03_Insured_Members(driver);
+		objInsuredMember.enterProposerDetails(policyType, sumInsureAmount, pinCode);
+
 	}
 
 }

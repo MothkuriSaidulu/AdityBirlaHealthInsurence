@@ -1,14 +1,11 @@
 package pages;
 
+import java.io.IOException;
 import java.util.List;
-import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
 import actions.onlineActions;
 import utilities.TestBase;
 
@@ -63,7 +60,7 @@ public class Page_03_Insured_Members extends onlineActions {
 	private WebElement insuredAmount;
 
 	@FindBy(xpath = "//input[@name='insuredPincodeHealth']")
-	private WebElement pinCode;
+	private WebElement areaPinCode;
 
 //	Actions
 	public void verifyinsuredMemberPageTitle() {
@@ -75,7 +72,6 @@ public class Page_03_Insured_Members extends onlineActions {
 	public void selectCoverType(String coverType) {
 
 //		objSelect = selectOptonsFromDropDown(covertypeDropDown);
-//		objSelect.selectByIndex(1);
 //		objSelect.selectByVisibleText(coverType);
 
 //		Select sel = new Select(covertypeDropDown);
@@ -104,69 +100,135 @@ public class Page_03_Insured_Members extends onlineActions {
 
 	public void PolicyType(String policyName) {
 
-//		objSelect = selectOptonsFromDropDown(covertypeDropDown);
-//		objSelect.selectByVisibleText(policyName);
+		try {
+			objSelect = selectOptonsFromDropDown(policyType);
+			objSelect.selectByVisibleText(policyName);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 //		Click(policyType, "portabilityOption");
 //
-		for (int i = 0; i < policyTypes.size(); i++) {
-			String webPolicyName = policyTypes.get(i).getText();
-//			System.out.println(webPolicyName);
-			if (webPolicyName.contains(policyName)) {
-				policyTypes.get(i).click();
-				break;
-			}
-		}
-
-//		Select sel = new Select(policyType);
-////		sel.selectByVisibleText("essential");
-//		sel.selectByIndex(1);
-
-//		objSelect.selectByIndex(1);
+//		for (int i = 0; i < policyTypes.size(); i++) {
+//			String webPolicyName = policyTypes.get(i).getText();
+////			System.out.println(webPolicyName);
+//			if (webPolicyName.contains(policyName)) {
+//				policyTypes.get(i).click();
+//				break;
+//			}
+//		}
 
 	}
 
-	public void selectDateOfBirth() {
-		proparty = new Properties();
-		String day = proparty.getProperty("day");
-		String moth = proparty.getProperty("moth");
-		String year = proparty.getProperty("year");
+	public void enterDateOfBirth() throws IOException {
 
-		dobDay.sendKeys("18");
-		dobMonth.sendKeys("08");
-		dobYear.sendKeys("1995");
+//		dobDay.sendKeys("18");
+//		dobMonth.sendKeys("08");
+//		dobYear.sendKeys("1995");
+
+		proparty = readPropartyFile();
+		getPropartyValue = proparty.getProperty("day");
+		EnterText(dobDay, "Day", getPropartyValue);
+
+		getPropartyValue = proparty.getProperty("month");
+		EnterText(dobMonth, "Month", getPropartyValue);
+
+		getPropartyValue = proparty.getProperty("year");
+		EnterText(dobYear, "Year", getPropartyValue);
+
+//		String day = proparty.getProperty("day");
+//		String moth = proparty.getProperty("moth");
+//		String year = proparty.getProperty("year");
 
 	}
 
-	public void selectgenderType() {
+	public void selectgenderType() throws IOException {
+
+		proparty = readPropartyFile();
+		getPropartyValue = proparty.getProperty("gender");
 		objSelect = selectOptonsFromDropDown(genderDropDown);
-		objSelect.selectByVisibleText("FEMALE");
+		objSelect.selectByVisibleText(getPropartyValue);
 
 	}
 
-	public void selectpolicyType() {
+	public void selectpolicyType() throws IOException {
 
-		Click(SelectPolicyType, "click on policy dropdown");
-		for (int i = 0; i < SelectPolicyTypeOptions.size(); i++) {
-			String policyType = SelectPolicyTypeOptions.get(i).getText();
-			if (policyType.contains("FAMILY FLOATER")) {
-				SelectPolicyTypeOptions.get(i).click();
-				break;
-			}
+		proparty = readPropartyFile();
+		getPropartyValue = proparty.getProperty("selectPolicyType");
+		objSelect = selectOptonsFromDropDown(SelectPolicyType);
+		objSelect.selectByVisibleText(getPropartyValue);
 
-		}
+//		objSelect = selectOptonsFromDropDown(genderDropDown);
+//		objSelect.selectByVisibleText(getPropartyValue);
+
+//		Click(SelectPolicyType, "click on policy dropdown");
+//		for (int i = 0; i < SelectPolicyTypeOptions.size(); i++) {
+//			String policyType = SelectPolicyTypeOptions.get(i).getText();
+//			System.out.println(policyType);
+//			if (policyType.contains("MULTI INDIVIDUAL")) {
+//				SelectPolicyTypeOptions.get(i).click();
+//				break;
+//			}
+//
+//		}
 
 	}
 
-	public void selectSelectSumInsuredForFamily() {
-		Select sel = new Select(insuredAmount);
-		sel.selectByVisibleText("500000");
+	public void selectSelectSumInsuredForFamily() throws IOException {
+//		proparty = readPropartyFile();
+//		getPropartyValue = proparty.getProperty("insuredAmount");
+//
+//		Select sel = new Select(insuredAmount);
+//		sel.selectByVisibleText(getPropartyValue);
+
+		proparty = readPropartyFile();
+		getPropartyValue = proparty.getProperty("insuredAmount");
+		objSelect = selectOptonsFromDropDown(insuredAmount);
+		objSelect.selectByVisibleText(getPropartyValue);
 
 	}
 
-	public void enterPinCode() {
-		EnterText(pinCode, "Enter Pin code", "508217");
+	public void enterPinCode() throws IOException {
+		proparty = readPropartyFile();
+		getPropartyValue = proparty.getProperty("pinCode");
+		EnterText(areaPinCode, "Enter Pin code", getPropartyValue);
 
+	}
+
+	public void enterProposerDetails(String policyType, String sumInsureAmount, String pinCode) throws IOException {
+		
+		proparty = readPropartyFile();
+		getPropartyValue = proparty.getProperty("day");
+		EnterText(dobDay, "Day", getPropartyValue);
+
+		getPropartyValue = proparty.getProperty("month");
+		EnterText(dobMonth, "Month", getPropartyValue);
+
+		getPropartyValue = proparty.getProperty("year");
+		EnterText(dobYear, "Year", getPropartyValue);
+		
+		
+		getPropartyValue = proparty.getProperty("gender");
+		objSelect = selectOptonsFromDropDown(genderDropDown);
+		objSelect.selectByVisibleText(getPropartyValue);
+		
+		getPropartyValue = proparty.getProperty("selectPolicyType");
+		objSelect = selectOptonsFromDropDown(SelectPolicyType);
+		objSelect.selectByVisibleText(getPropartyValue);
+
+//		proparty = readPropartyFile();
+		getPropartyValue = proparty.getProperty("insuredAmount");
+		objSelect = selectOptonsFromDropDown(insuredAmount);
+		objSelect.selectByVisibleText(getPropartyValue);
+
+//		proparty = readPropartyFile();
+		getPropartyValue = proparty.getProperty("pinCode");
+		objSelect = selectOptonsFromDropDown(areaPinCode);
+		objSelect.selectByVisibleText(getPropartyValue);
+
+		getPropartyValue = proparty.getProperty("pinCode");
+		EnterText(areaPinCode, "Enter Pin code", getPropartyValue);
+		
 	}
 
 }
