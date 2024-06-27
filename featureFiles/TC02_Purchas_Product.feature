@@ -13,3 +13,4 @@ Feature: ABHI New Bussiness Functionality.
     And enter proposer details.
  #   And enter member details.
  # Addnewly
+ #new
