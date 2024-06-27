@@ -25,6 +25,7 @@ import utilities.TestBase;
 public class onlineActions extends TestBase {
 
 	public static String rootPath = System.getProperty("user.dir");
+	public static Properties proparty;
 
 //	public static WebDriver driver;
 

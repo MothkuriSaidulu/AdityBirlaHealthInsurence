@@ -40,13 +40,17 @@ public class TC02_Purchas_Product extends TestBase {
 	@Then("select policy type as {string}.")
 	public void select_policy_type(String policyType) {
 		objInsuredMember = new Page_03_Insured_Members(driver);
-		objInsuredMember.selectPolicyType(policyType);
+		objInsuredMember.PolicyType(policyType);
 	}
 
 	@Then("enter proposer details.")
 	public void enter_proposer_details() {
 		objInsuredMember = new Page_03_Insured_Members(driver);
 		objInsuredMember.selectDateOfBirth();
+		objInsuredMember.selectgenderType();
+		objInsuredMember.selectpolicyType();
+		objInsuredMember.selectSelectSumInsuredForFamily();
+		objInsuredMember.enterPinCode();
 	}
 
 }
