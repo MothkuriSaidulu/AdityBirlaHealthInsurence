@@ -1,5 +1,6 @@
 Feature: ABHI New Bussiness Functionality.
 
+    And select policy type as "New Business".
   Scenario: verify Standalone Active health product for new bussiness type and active health platinum type Enhanced.
     Given user launched the brower and entered url.
     When agent enterd userid As "5100003" password as this "Test@1234".
