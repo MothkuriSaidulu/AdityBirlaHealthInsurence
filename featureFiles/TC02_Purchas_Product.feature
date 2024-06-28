@@ -1,6 +1,5 @@
 Feature: ABHI Active Health Product Functionality.
 
-  Scenario: verify Standalone Active health product for new bussiness type and active health platinum type Enhanced.
   @ENHANCED_New_Business
   Scenario: verify Standalone Active health product for ENHANCED_New_Business.
     Given user launched the brower and entered url.
@@ -15,7 +14,6 @@ Feature: ABHI Active Health Product Functionality.
     # And enter proposer details.
     And enter proposer details Select Policy Type as "FAMILY FLOATER" and Select Sum Insured for Family as "600000" and pincode as "508217".
 
-
   @ESSENTIAL_New_Business
   Scenario: verify Standalone Active health product for ENHANCED_New_Business.
     Given user launched the brower and entered url.
@@ -29,7 +27,7 @@ Feature: ABHI Active Health Product Functionality.
     And select policy type as "Portability".
     And enter proposer details.
     And select policy type as "New Business".
-   # And enter proposer details.
+    # And enter proposer details.
     And enter proposer details Select Policy Type as "FAMILY FLOATER" and Select Sum Insured for Family as "1000000" and pincode as "508217".
 
   @PREMIER_New_Business
@@ -43,5 +41,5 @@ Feature: ABHI Active Health Product Functionality.
     Then verify agent landed on Insured Members page.
     And choose active health platinum type as "PREMIER".
     And select policy type as "New Business".
-  #  And enter proposer details.
+    #  And enter proposer details.
     And enter proposer details Select Policy Type as "FAMILY FLOATER" and Select Sum Insured for Family as "1000000" and pincode as "508217".
