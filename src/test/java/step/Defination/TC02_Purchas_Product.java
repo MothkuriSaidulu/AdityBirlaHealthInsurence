@@ -20,7 +20,6 @@ public class TC02_Purchas_Product extends TestBase {
 	public void select_standalone_product_type() throws IOException {
 		objDashboard = new Page_02_Dashboard(driver);
 		objDashboard.selectStandAloneProduct();
-
 	}
 
 	@Then("verify agent landed on Insured Members page.")
@@ -47,8 +46,6 @@ public class TC02_Purchas_Product extends TestBase {
 	public void enter_proposer_details() throws IOException {
 		objInsuredMember = new Page_03_Insured_Members(driver);
 		objInsuredMember.enterDateOfBirth();
-//		objInsuredMember.enterMonth();
-//		objInsuredMember.enterYear();
 		objInsuredMember.selectgenderType();
 		objInsuredMember.selectpolicyType();
 		objInsuredMember.selectSelectSumInsuredForFamily();
@@ -60,6 +57,11 @@ public class TC02_Purchas_Product extends TestBase {
 			String policyType, String sumInsureAmount, String pinCode) throws IOException {
 		objInsuredMember = new Page_03_Insured_Members(driver);
 		objInsuredMember.enterProposerDetails(policyType, sumInsureAmount, pinCode);
+
+	}
+
+	@Then("enter member details.")
+	public void enter_member_details() {
 
 	}
 

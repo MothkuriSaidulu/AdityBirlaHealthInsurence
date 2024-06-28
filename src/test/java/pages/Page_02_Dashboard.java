@@ -34,17 +34,14 @@ public class Page_02_Dashboard extends onlineActions {
 	@FindBy(xpath = "//a[contains(text(),'Buy Combi Product')]")
 	private WebElement BuyCombiProduct;
 
-	//
-
 	public void clickOnPlusButton() throws IOException {
 		Click(plusButton, "Click On Plus button");
 		Click(getQuote, "Get quote");
-
 	}
 
 	public void selectStandAloneProduct() throws IOException {
 		Click(BuyStandaloneProduct, "Standalon Product");
-		
+
 		proparty = readPropartyFile();
 		String configProductName = proparty.getProperty("productType");
 

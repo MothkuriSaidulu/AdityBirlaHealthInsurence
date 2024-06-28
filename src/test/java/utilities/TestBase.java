@@ -28,24 +28,10 @@ public class TestBase {
 	public static FileInputStream filePath;
 	public static String rootPath = System.getProperty("user.dir");
 
-//	public Properties properties() throws IOException {
-//
-//		try {
-//			proparty = new Properties();
-//			filePath = new FileInputStream("config.properties");
-//			proparty.load(filePath);
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return proparty;
-//	}
-
 	public void launchBrowserAndEnterURL() {
 
 		try {
 			proparty = new Properties();
-//			proparty = new Properties();
 			filePath = new FileInputStream("config.properties");
 			proparty.load(filePath);
 			getPropartyValue = proparty.getProperty("browser");
