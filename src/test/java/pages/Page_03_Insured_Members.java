@@ -59,7 +59,7 @@ public class Page_03_Insured_Members extends onlineActions {
 	@FindBy(xpath = "//select[@id='insuredSiHealth']")
 	private WebElement insuredAmount;
 
-	@FindBy(xpath = "//input[@name='insuredPincodeHealth']")
+	@FindBy(css = "input[name='insuredPincodeHealth']")
 	private WebElement areaPinCode;
 
 //	Actions
@@ -219,11 +219,6 @@ public class Page_03_Insured_Members extends onlineActions {
 //		proparty = readPropartyFile();
 		getPropartyValue = proparty.getProperty("insuredAmount");
 		objSelect = selectOptonsFromDropDown(insuredAmount);
-		objSelect.selectByVisibleText(getPropartyValue);
-
-//		proparty = readPropartyFile();
-		getPropartyValue = proparty.getProperty("pinCode");
-		objSelect = selectOptonsFromDropDown(areaPinCode);
 		objSelect.selectByVisibleText(getPropartyValue);
 
 		getPropartyValue = proparty.getProperty("pinCode");
