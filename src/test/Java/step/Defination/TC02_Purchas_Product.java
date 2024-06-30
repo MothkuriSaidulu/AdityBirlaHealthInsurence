@@ -62,7 +62,8 @@ public class TC02_Purchas_Product extends TestBase {
 
 	@Then("enter member details.")
 	public void enter_member_details() {
-
+		System.out.println("Test eneded here");
+		
 	}
 
 }
