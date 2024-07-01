@@ -19,22 +19,26 @@ public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties proparty;
-	public static Select objSelect;
 	public static String getPropartyValue;
-	public Page_01_loginPage objLoginPage;
-	public Page_02_Dashboard objDashboard;
-	public Page_03_Insured_Members objInsuredMember;
-
 	public static FileInputStream filePath;
+
+	public static Select objSelect;
+	public static Page_01_loginPage objLoginPage;
+	public static Page_02_Dashboard objDashboard;
+	public static Page_03_Insured_Members objInsuredMember;
+
 	public static String rootPath = System.getProperty("user.dir");
 
 	public void launchBrowserAndEnterURL() {
 
 		try {
+			
+//			Properties proparty = new Properties();
+			
 			proparty = new Properties();
-			filePath = new FileInputStream("config.properties");
+			filePath = new FileInputStream("config.properties"); // E:\AdityBirlaHealthInsurence\config.properties
 			proparty.load(filePath);
-			getPropartyValue = proparty.getProperty("browser");
+			getPropartyValue = proparty.getProperty("browser");  
 			System.out.println(getPropartyValue);
 			if (getPropartyValue.contains("chrome")) {
 				WebDriverManager.chromedriver().setup();
