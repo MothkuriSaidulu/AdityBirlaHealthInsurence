@@ -14,7 +14,7 @@ public class Page_01_loginPage extends onlineActions {
 
 	public Page_01_loginPage(WebDriver driver) {
 		super(driver);
-		TestBase.driver = driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 
 	}

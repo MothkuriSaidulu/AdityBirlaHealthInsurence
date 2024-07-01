@@ -24,17 +24,17 @@ import utilities.TestBase;
 
 public class onlineActions extends TestBase {
 
-	public static String rootPath = System.getProperty("user.dir");
+//	public static String rootPath = System.getProperty("user.dir");
 //	public static Properties proparty;
 
 //	public static WebDriver driver;
 
 	public static final Logger logger = Logger.getLogger(onlineActions.class);
 
-	public onlineActions(WebDriver driver) {
-		TestBase.driver = driver;
-		PageFactory.initElements(driver, this);
-
+	public onlineActions(WebDriver driver) 
+	{
+		this.driver = driver;
+//		PageFactory.initElements(driver, this);
 	}
 
 //	Apply Wait mechanism
