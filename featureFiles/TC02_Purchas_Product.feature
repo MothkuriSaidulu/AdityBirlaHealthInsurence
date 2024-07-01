@@ -25,11 +25,10 @@ Feature: ABHI Active Health Product Functionality.
     And select standalone product type.
     Then verify agent landed on Insured Members page.
     And choose active health platinum type as "ESSENTIAL".
-    And select policy type as "Portability".
-    And enter proposer details.
     And select policy type as "New Business".
     # And enter proposer details.
     And enter proposer details Select Policy Type as "FAMILY FLOATER" and Select Sum Insured for Family as "1000000" and pincode as "508217".
+    And enter member details.
 
   @PREMIER_New_Business
   Scenario: verify Standalone Active health product for ENHANCED_New_Business.
@@ -43,4 +42,6 @@ Feature: ABHI Active Health Product Functionality.
     And choose active health platinum type as "PREMIER".
     And select policy type as "New Business".
     #  And enter proposer details.
-    And enter proposer details Select Policy Type as "FAMILY FLOATER" and Select Sum Insured for Family as "1000000" and pincode as "508217".
+    And enter proposer details Select Policy Type as "FAMILY FLOATER" and Select Sum Insured for Family as "1500000" and pincode as "508217".
+    And enter member details.
+    

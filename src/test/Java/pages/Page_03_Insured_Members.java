@@ -116,7 +116,7 @@ public class Page_03_Insured_Members extends onlineActions {
 		objSelect.selectByVisibleText(getPropartyValue);
 	}
 
-	public void selectSelectSumInsuredForFamily() throws IOException {
+	public void selectSumInsuredForFamily() throws IOException {
 		proparty = readPropartyFile();
 		getPropartyValue = proparty.getProperty("insuredAmount");
 		objSelect = selectOptonsFromDropDown(insuredAmount);
@@ -132,6 +132,7 @@ public class Page_03_Insured_Members extends onlineActions {
 
 	public void enterProposerDetails(String policyType, String sumInsureAmount, String pinCode) throws IOException {
 
+//		Date of Birth
 		proparty = readPropartyFile();
 		getPropartyValue = proparty.getProperty("day");
 		EnterText(dobDay, "Day", getPropartyValue);
@@ -142,20 +143,21 @@ public class Page_03_Insured_Members extends onlineActions {
 		getPropartyValue = proparty.getProperty("year");
 		EnterText(dobYear, "Year", getPropartyValue);
 
+//		Gender selection
 		getPropartyValue = proparty.getProperty("gender");
 		objSelect = selectOptonsFromDropDown(genderDropDown);
 		objSelect.selectByVisibleText(getPropartyValue);
 
-		getPropartyValue = proparty.getProperty("selectPolicyType");
+//		Policy selection
 		objSelect = selectOptonsFromDropDown(SelectPolicyType);
-		objSelect.selectByVisibleText(getPropartyValue);
+		objSelect.selectByVisibleText(policyType);
 
-		getPropartyValue = proparty.getProperty("insuredAmount");
+//		Sum Insured Amount
 		objSelect = selectOptonsFromDropDown(insuredAmount);
-		objSelect.selectByVisibleText(getPropartyValue);
+		objSelect.selectByVisibleText(sumInsureAmount);
 
-		getPropartyValue = proparty.getProperty("pinCode");
-		EnterText(areaPinCode, "Enter Pin code", getPropartyValue);
+//		Enter Pin code
+		EnterText(areaPinCode, "Enter Pin code", pinCode);
 
 	}
 

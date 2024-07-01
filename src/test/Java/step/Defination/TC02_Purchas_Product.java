@@ -48,7 +48,7 @@ public class TC02_Purchas_Product extends TestBase {
 		objInsuredMember.enterDateOfBirth();
 		objInsuredMember.selectgenderType();
 		objInsuredMember.selectpolicyType();
-		objInsuredMember.selectSelectSumInsuredForFamily();
+		objInsuredMember.selectSumInsuredForFamily();
 		objInsuredMember.enterPinCode();
 	}
 
