@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
 		glue = { "step.Defination" },
 //				plugin = { "pretty","html:target\\report.html" }, 
 		dryRun = false, monochrome = true, 
-//		tags = "@ENHANCED_New_Business", 
+		tags = "@ENHANCED_New_Business", 
 		plugin = { "json:target/cucumberJson.json",
 				"html:target/cucumberhtml.html" }
 
@@ -21,4 +21,6 @@ import io.cucumber.junit.CucumberOptions;
 
 public class TestRunner {
 
+	
+	
 }
