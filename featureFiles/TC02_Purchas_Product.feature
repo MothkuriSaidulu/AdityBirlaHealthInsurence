@@ -13,6 +13,7 @@ Feature: ABHI Active Health Product Functionality.
     And select policy type as "New Business".
     # And enter proposer details.
     And enter proposer details Select Policy Type as "FAMILY FLOATER" and Select Sum Insured for Family as "600000" and pincode as "508217".
+    And enter member details.
 
   @ESSENTIAL_New_Business
   Scenario: verify Standalone Active health product for ENHANCED_New_Business.

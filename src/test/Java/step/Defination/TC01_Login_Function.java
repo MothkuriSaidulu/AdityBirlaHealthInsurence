@@ -32,7 +32,6 @@ public class TC01_Login_Function extends TestBase {
 	@Then("verify agent landed on dashboard.")
 	public void verify_agent_landed_on_dashboard() {
 		String expectedPageTitle = "Aditya Birla Health Insurance";
-
 		try {
 			String actualPageTitle = driver.getTitle();
 			Assert.assertEquals(expectedPageTitle, actualPageTitle);
